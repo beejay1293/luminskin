@@ -1,0 +1,25 @@
+{
+    "plugins": ["react-hooks"],
+    "parser": "babel-eslint",
+	"rules": {
+		// "react-hooks/rules-of-hooks": "error",
+        // "react-hooks/exhaustive-deps": "warn",
+        "comma-dangle": 0
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    // "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "15.4.2"
+        }
+    }
+}
