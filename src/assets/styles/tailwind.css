@@ -54,12 +54,24 @@ body {
 
 .main {
   background-color: #e1e8da;
-  min-height: 100vh
+  /* min-height: 100vh */
 }
 
 .lumin_header_1 ul, .lumin_header_2 ul {
   font-size: 12px;
   line-height: 27px;
+}
+
+.lumin-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-card {
+  /* width: 30%; */
+  margin-top: 10px;
+  text-align: center
 }
 
 @tailwind utilities;

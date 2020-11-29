@@ -1,7 +1,7 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, LOADING  } from '../constants'
+import { ADD_TO_CART, REMOVE_FROM_CART} from '../constants'
 
 const initialState = {
-    cart : []
+    cart : {}
 }
 
 export default (state= initialState, action) => {
@@ -9,8 +9,28 @@ export default (state= initialState, action) => {
         case ADD_TO_CART:
             return {
                 ...state,
-                cart: state.products
+                cart: state.cart[action.id] ? {...state.cart, [action.id]: state.cart[action.id] + 1 } : {...state.cart, [action.id]: 1}
             }
+        case REMOVE_FROM_CART:
+            if(state.cart[action.id]) {
+                if(state.cart[action.id] === 1) {
+                    let newCart = state.cart
+                    delete newCart[action.id]
+                    return {
+                        ...state,
+                        cart: newCart
+                    }
+                }
+                return {
+                    ...state,
+                    cart: {...state.cart, [action.id]: state.cart[action.id] - 1}
+                }
+            } else {
+                return {
+                    ...state
+                }
+            }
+            
         default:
             return state;
     }
