@@ -53,7 +53,7 @@ ReactDOM.render(
       persistor={store.__PERSISTOR}
      loading={<Loader />}
     >
-     <ApolloProvider client={client}>
+      <ApolloProvider client={client}>
         <ErrorBoundary>
           <Router>
             <Route path="/" component={Products} />

@@ -1,11 +1,11 @@
 import gql from "graphql-tag";
 
 export default gql`
-{
-    products {
+  query Products($currency: Currency) {
+    products{
       id,
       title,
-      price(currency: USD),
+      price(currency: $currency),
       image_url,
       product_options {
         title,
@@ -13,5 +13,4 @@ export default gql`
       }
     }
   }
-  
 `;

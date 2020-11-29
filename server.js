@@ -5,7 +5,7 @@ app.use(express.static(path.join(__dirname)));
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
-const PORT = 3002;
+const PORT = 3000;
 app.listen(process.env.PORT || PORT, () => {
   console.log(`server listening on ${process.env.PORT || PORT}`);
 });
